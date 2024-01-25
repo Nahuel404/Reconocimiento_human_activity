@@ -1,6 +1,10 @@
 # Reconocimiento_human_activity
 
-Welcome to the project of recognition of human activity
+Welcome to the project on recognition of human activity. This project consists of creating an AI model to predict the activity being performed at each moment.
+
+<div>
+    This will be achieved by utilizing data from the sensors of smartphones, the same data and features detailed in the data collection. The project's aim is not to develop the app itself but to create the AI responsible for the task. However, I will also develop an API that can be used in a cloud-connected app.
+</div>
 
 ## Data collect:
 
@@ -96,32 +100,9 @@ Ytest_one_hot = to_categorical(Ytest - 1, num_classes=6)
 For the model, I chose a neural network because neural networks can be trained with various types of data. In this case, the data consist of signals from the sensors of a smartphone, making it the best option for the task. I started by applying a PCA algorithm, and the next step was to generate different neural network (NN) architectures to choose the best one. I explain with more details below:
 
 <div>
-  I decided to compress the data using the PCA algorithm because, being a mobile application, I needed everything to be as lightweight as possible. Additionally, there were redundancies in the features of the dataset.
+  I decided to compress the data using the PCA algorithm to visualice the data.
 </div>
 
-### PCA(Principal Components Analysis)
 
-The PCA algorithm is used to reduce the number of features, the algorithm work in the next form:
-
-#### Pre-process features:
-
-- Normalized to have zero mean
-- Features Scaling
-
-#### Choose an axis:
-
-- Try to find an axis to retain variance, because more variance means more information, don't exist "y" axis instead you have x_1, x_2, ... , x_n
-
-### In Sklearn:
-
-*optional* pre-processing: perform feature skaling
-
-1. "Fit" the data to obtain the number of features you wish<br>
-`fit(includes mean normalization)`
-2. Optionally examine how much variance is explained by ewach principal component<br>
-`explained_variance_ratio`
-3. Transform(project) the data onto the new axis<br>
-`Transform`
-
-You can see more details in the notebook [IA_development.ipynb](./IA_development.ipynb) or in the IA_details.md
+You can find more details in the notebook [IA_development.ipynb](./IA_development.ipynb) or in the IA_details.md file. The model is available in this repository or by clicking on [model](./trained_model).
 
