@@ -1,6 +1,6 @@
 # Reconocimiento_human_activity
+<img src="./rsc/67440cf78c8aedfa65f106d20d1cbdd8.gif" alt="GIF" width="100%">
 
-![img](./rsc/67440cf78c8aedfa65f106d20d1cbdd8.gif){width=100%}
 
 Welcome to the project on recognition of human activity. This project consists of creating an AI model to predict the activity being performed at each moment.
 
