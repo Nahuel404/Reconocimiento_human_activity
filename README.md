@@ -14,7 +14,15 @@ Welcome to the project on recognition of human activity. This project consists o
 ##### The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
 Check the README.txt file for further details about this dataset. 
-<div>A video of the experiment including an example of the 6 recorded activities with one of the participants can be seen in the following link: http://www.youtube.com/watch?v=XOEN9W05_4A</div>
+<div>A video of the experiment including an example of the 6 recorded activities with one of the participants can be seen bellow:
+    
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=XOEN9W05_4A">
+    <img src="https://i.ytimg.com/vi/XOEN9W05_4A/sddefault.jpg" alt="Texto alternativo" width="350">
+  </a>
+</p>
+
+
 
 > Credits:<br>Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra y Jorge L. Reyes-Ortiz. Un Conjunto de Datos de Dominio Público para el Reconocimiento de Actividades Humanas Utilizando Teléfonos Inteligentes. 21º Simposio Europeo sobre Redes Neuronales Artificiales, inteligencia Computacional y Aprendizaje Automático, ESANN 2013. Brujas, Bélgica, del 24 al 26 de abril de 2013.
 
