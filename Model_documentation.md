@@ -1,1 +1,1 @@
-# UCI HAR model Documentation
+# HAR model Documentation
