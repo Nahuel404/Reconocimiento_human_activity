@@ -48,6 +48,10 @@ To start the modeling of the NN, I generate 5 architectures with differents numb
   - 9th Layer: 6 Units(Softmax)
 
 
-I only explain the architecture that i choose, it's the 4th architecture
+I only explain the architecture that i choose, it's the 4th architecture:
 
+<p align="center">
+    <img src="./rsc/NN_diagram.png" alt="diagrama NN" width="500">
+  </a>
+</p>
 
