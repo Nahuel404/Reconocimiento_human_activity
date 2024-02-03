@@ -55,3 +55,41 @@ I only explain the architecture that i choose, it's the 4th architecture:
   </a>
 </p>
 
+I use 5 dense layers; the hidden layers have ReLU activation functions, and the output layer has Softmax activation. <br>
+ReLU is the most common activation function in the hidden layers because its performance, compared to other functions, is either the same or better, but with faster computation times. On the other hand, for the output layer, the softmax activation function is the better option because I have a multiple classification problem. For more details, please refer to the 'Mathematics Details' section later. <br>
+The loss function is categorical crossentropy because it is suitable for the activation of the output layer (Softmax). The optimizer I use is the Adam optimization. <br>
+In the training state, I use 100 epochs with a batch size of 1000 and split 20% of the data for validation. <br>
+For data preprocessing, in the notebook about AI development, you only find the one-hot encoding of the y_train and y_test datasets; all other transformations are detailed in the exploration notebook.<br>
+The results shown bellow:
+```
+93/93 [==============================] - 1s 15ms/step - loss: 0.2297 - accuracy: 0.9443
+Pérdida en el conjunto de prueba: 0.2297133505344391
+Precisión en el conjunto de prueba: 0.9443312883377075
+Model: "sequential_8"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_42 (Dense)            (None, 102)               57324     
+                                                                 
+ dense_43 (Dense)            (None, 102)               10506     
+                                                                 
+ dense_44 (Dense)            (None, 256)               26368     
+                                                                 
+ dense_45 (Dense)            (None, 128)               32896     
+                                                                 
+ dense_46 (Dense)            (None, 6)                 774       
+                                                                 
+=================================================================
+Total params: 127868 (499.48 KB)
+Trainable params: 127868 (499.48 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+None
+```
+
+> To choose the units for the first layer, I employed a PCA (Principal Components Analysis) algorithm with the condition of capturing more than 95% of information. The result was 102 principal components (PCs). Although this is a method for data compression, my intuition suggested that using the number of PCs in the input layer would yield the same performance with greater efficiency. Maybe in other repositorie I explain this with more scientific rigor.
+
+
+## Mathematic Details
+
+
