@@ -92,4 +92,54 @@ None
 
 ## Mathematic Details
 
+I show you the mathematics details from each part of the Neural Network, enjoy it!
 
+### Activations Functions
+
+**ReLu:**<br>
+The Rectified Linear Unit (ReLU) is a commonly used activation function in neural networks and is defined as:
+
+$$f(x) = max(0, x)$$
+
+where:
+- $f(x)$ is the output of the ReLU activation function.
+- $x$ is the input to the function.
+
+In other words, the ReLU function outputs the input directly if it is positive, and zero otherwise.
+
+<p align="center">
+    Graphic Representation
+</p>
+
+<p align="center">
+    <img src="./rsc/relu.png" alt="diagrama NN" width="400">
+  </a>
+</p>
+
+**Softmax:**<br>
+The Softmax activation function is commonly used in the output layer of a neural network for multi-class classification problems. It converts a vector of real numbers into a probability distribution.
+
+Given an input vector \( z \) of length \( K \) (where \( K \) is the number of classes), the Softmax function is defined as:
+
+
+<p align="center">
+    <img src="https://docs-assets.developer.apple.com/published/c2185dfdcf/0ab139bc-3ff6-49d2-8b36-dcc98ef31102.png" alt="formula" width="200">
+  </a>
+</p>
+
+where:
+- ${Softmax}(z_i)$ is the $i$-th element of the Softmax output.
+- $e$ is the base of the natural logarithm.
+- $z_i$ is the $i$-th element of the input vector $z$.
+- The denominator is the sum of the exponentials of all elements in the input vector $z$.
+
+In essence, the Softmax function normalizes the input vector into a probability distribution over multiple classes.
+
+<p align="center">
+    Graphic Representation
+</p>
+
+<p align="center">
+    <img src="./rsc/softmax.png" alt="diagrama softmax" width="400">
+  </a>
+</p>
