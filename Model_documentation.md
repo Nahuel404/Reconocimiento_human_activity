@@ -143,3 +143,79 @@ In essence, the Softmax function normalizes the input vector into a probability 
     <img src="./rsc/softmax.png" alt="diagrama softmax" width="400">
   </a>
 </p>
+
+In a neural network's output layer for a multi-class classification task, the Softmax function is often combined with the cross-entropy loss to train the model effectively.
+
+### Loss Function:
+
+The categorical cross-entropy loss function is commonly used in neural networks for multi-class classification problems. It measures the dissimilarity between the true distribution (ground truth) and the predicted probability distribution.
+<br>
+Given:
+-  $y$: True distribution (one-hot encoded labels),
+- $hat{y}$: Predicted probability distribution,
+
+the categorical cross-entropy loss $L_{\text{CCE}}$ is defined as:
+
+$$ L_{\text{CCE}}(y, \hat{y}) = - \sum_{i} y_i \cdot \log(\hat{y}_i) $$
+
+where:
+- $i$ ranges over all classes.
+- $y_i$ is the $i$-th element of the true distribution (1 for the true class, 0 otherwise).
+- $\hat{y}_i$ is the $i$-th element of the predicted probability distribution.
+
+The negative logarithm is used to penalize confidently incorrect predictions more heavily. <br>
+In neural network training, the goal is to minimize the categorical cross-entropy loss. This is often done using optimization algorithms like stochastic gradient descent (SGD) or its variants.
+
+### Optimización Adam (Adaptive Moment Estimation)
+
+<p align="center">
+    Graphic Representation
+</p>
+
+<p align="center">
+    <img src="./rsc/1_U224pqhF4WUOZhfmDIWtxA.gif" alt="diagrama optimizer" width="400">
+  </a>
+</p>
+
+> This is an illustrative example of how the different optimizer algorithms work.
+
+Adam is a popular optimization algorithm used in training neural networks. It combines concepts from stochastic gradient descent (SGD) and RMSprop, adapting learning rates for each parameter individually.
+<br>
+
+Parameter updates in Adam are calculated using the following formulas:
+
+#### First-Order Moment (Exponential Moving Average of Gradients)
+
+$$ m_t = \beta_1 \cdot m_{t-1} + (1 - \beta_1) \cdot g_t $$
+
+where:
+- $m_t$ is the exponential moving average of gradients at time $ t $.
+- $\beta_1$ is the exponential decay factor for the first moment (typically close to 1, e.g., 0.9).
+
+#### Second-Order Moment (Exponential Moving Average of Squared Gradients)
+
+$$ v_t = \beta_2 \cdot v_{t-1} + (1 - \beta_2) \cdot g_t^2 $$
+
+where:
+- $v_t$ is the exponential moving average of squared gradients at time $t$.
+- $\beta_2$ is the exponential decay factor for the second moment (typically close to 1, e.g., 0.999).
+
+#### Bias Correction
+
+Since $m_t$ and $v_t$ are initialized to zero in the early steps, a bias correction is performed:
+
+$$ \hat{m}_t = \frac{m_t}{1 - \beta_1^t} $$
+
+$$ \hat{v}_t = \frac{v_t}{1 - \beta_2^t} $$
+
+#### Parameter Update
+
+Finally, the parameters are updated using the following formula:
+
+$$ \theta_{t+1} = \theta_t - \frac{\alpha}{\sqrt{\hat{v}_t} + \epsilon} \cdot \hat{m}_t $$
+
+where:
+- $\theta_t$ are the parameters at time $t$.
+- $\alpha$ is the learning rate.
+- $\epsilon$ is a small constant to prevent division by zero (e.g., $1 \times 10^{-8}$).
+
