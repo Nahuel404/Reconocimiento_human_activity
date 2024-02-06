@@ -219,3 +219,6 @@ where:
 - $\alpha$ is the learning rate.
 - $\epsilon$ is a small constant to prevent division by zero (e.g., $1 \times 10^{-8}$).
 
+### In summary:
+
+In this neural network, hidden layers are composed of ReLU activation functions, and the output layer utilizes softmax, as it is a multiple classification problem. The chosen cost function is categorical_crossentropy, and for the optimization process, I selected the Adam optimizer algorithm.
